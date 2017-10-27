@@ -4,7 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>My Big Clock</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js"></script>
+
+    <script type="text/javascript">
+    
+        let canvasWidth = 1024,
+            canvasHeight = 1024;
+
+        function setup() {
+            createCanvas(canvasWidth, canvasHeight);
+        }
+
+        function draw() {
+            background(255, 255, 0);
+
+            hr = hour();
+            min = minute();
+            sec = second();
+
+            text(hr + ":" + min + ":" + sec, 100, 100);
+        }
+
+    </script>
 </head>
 <body>
     
