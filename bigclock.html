@@ -13,8 +13,11 @@
         let canvasWidth = 1024,
             canvasHeight = 1024;
 
+        const RAD = Math.PI / 180.0;
+
         function setup() {
             createCanvas(canvasWidth, canvasHeight);
+            textAlign(CENTER);
         }
 
         function draw() {
@@ -25,6 +28,45 @@
             sec = second();
 
             text(hr + ":" + min + ":" + sec, 100, 100);
+
+            
+            translate(canvasWidth / 2, canvasHeight / 2);
+            push();
+
+            rotate((RAD * sec * 6) - (RAD * min * 6));
+
+            line(-8, -240, -10, -280);
+            line(8, -240, 10, -280);
+            line(-10, -280, 10, -280);
+
+            pop();
+            /*text("0 degrees", 0, -256);
+            rotate(90 * RAD);
+            text("90 degrees", 0, -256);
+            rotate(90 * RAD);
+            text("180 degrees", 0, -256);
+            rotate(90 * RAD);
+            text("270 degrees", 0, -256);
+            rotate(90 * RAD);*/
+
+            push();
+
+            rotate(RAD * min * -6)
+            
+
+            for (let i = 1; i <= 60; i++) {
+                rotate(RAD * 6);
+                text(i, 0, -256);
+            }
+
+            pop();
+
+            rotate(RAD * hr * -30);
+
+            for (let i = 1; i <= 12; i++) {
+                rotate(RAD * 30);
+                text(i, 0, -270);
+            }
         }
 
     </script>
