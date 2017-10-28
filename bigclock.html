@@ -10,8 +10,8 @@
 
     <script type="text/javascript">
     
-        let canvasWidth = 1024,
-            canvasHeight = 1024;
+        let canvasWidth = 620,
+            canvasHeight = 620;
 
         const RAD = Math.PI / 180.0;
 
@@ -21,23 +21,39 @@
         }
 
         function draw() {
-            background(255, 255, 0);
+            background(255);
 
             hr = hour();
             min = minute();
             sec = second();
 
-            text(hr + ":" + min + ":" + sec, 100, 100);
+            //text(hr + ":" + min + ":" + sec, 100, 100);
+
+            translate(canvasWidth / 2, canvasHeight / 2);
+
+            noStroke();
+            fill(200, 0, 0);
+            ellipse(0, 0, 282 * 2);
+            fill(0, 200, 0)
+            ellipse(0, 0, 268 * 2);
+            fill(255);
+            ellipse(0, 0, 252 * 2);
 
             
-            translate(canvasWidth / 2, canvasHeight / 2);
+            fill(200, 200, 0);
+            rect(-8, -284, 16, 32);
+            fill(0);
+            stroke(0);
+
             push();
 
             rotate((RAD * sec * 6) - (RAD * min * 6));
 
-            line(-8, -240, -10, -280);
-            line(8, -240, 10, -280);
-            line(-10, -280, 10, -280);
+            //line(-8, -240, -10, -280);
+            //line(8, -240, 10, -280);
+            //line(-10, -280, 10, -280);
+
+            ellipse(0, -246, 8)
 
             pop();
             /*text("0 degrees", 0, -256);
@@ -70,6 +86,13 @@
         }
 
     </script>
+        
+    <style>
+        #defaultCanvas0 {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
     
